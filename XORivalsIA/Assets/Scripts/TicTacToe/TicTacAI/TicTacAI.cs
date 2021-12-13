@@ -385,7 +385,7 @@ public class TicTacAI : MonoBehaviour
 
             case ticTacMachState.MIDPLACED:
                 for(int i = 0; i <= 2; i+=2){
-                    for(int j = 0; j <= 2; i+=2){
+                    for(int j = 0; j <= 2; j+=2){
                         if(thisMatch.FilledPositions[i,j] == 3){
                             nextRow = i;
                             nextCol = j;
