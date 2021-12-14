@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour {
     public GameObject characterPlaying;
     MatchAI thisMatch;
     PlayerInfo localPlayer;
+    public Vector3 posPlayer;
 
     //Distance to shooter
     private float distanceToParent = 0f;
@@ -22,20 +23,21 @@ public class Bullet : MonoBehaviour {
         localPlayer = FindObjectOfType<PlayerInfo>();
 
             characterPlaying = characterO;
-
+        posPlayer = characterPlaying.transform.position;
     }
 
     void Update(){
 
         //Move
-        this.transform.position = Vector3.MoveTowards(this.transform.position, characterPlaying.transform.position, Time.deltaTime * SPEED);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, posPlayer, Time.deltaTime * SPEED);
 
         //Update distance to parent
-        distanceToParent = Vector3.Distance(this.transform.position, parent.transform.position);
+        distanceToParent = Vector3.Distance(this.transform.position, posPlayer);
 
+        Debug.Log(distanceToParent);
         //If distance is greater than max, hide
-        if(distanceToParent >= MAXDISTTOPARENT){
-            Destroy(this);
+        if(distanceToParent <= 0.01f){
+            Destroy(this.gameObject);
         }
     }
 

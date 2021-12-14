@@ -23,8 +23,8 @@ public class FollowDroneStateMachine : MonoBehaviour{
     float timeAttacking = 0f;
     private const float MAXTIMEATTACKING = 3f;
     float speed;
-    private const float BASESPEED = 2.5f;
-    private const float RAGESPEED = 3f;
+    private const float BASESPEED = 1f;
+    private const float RAGESPEED = 1.4f;
     bool characterNear = false;
 
     //Pathfinding route
