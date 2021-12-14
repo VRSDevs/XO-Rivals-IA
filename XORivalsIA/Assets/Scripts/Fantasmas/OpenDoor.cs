@@ -6,6 +6,7 @@ public class OpenDoor : MonoBehaviour
 {
 
     public List<EnemyBT> enemyTree;
+    public List<FSMEnemy> enemyFSM;
     public float distanciaAviso = 100f;
 
 
@@ -46,6 +47,24 @@ public class OpenDoor : MonoBehaviour
 
 
             }
+            //Avisamos a los fantasmas cercanos
+            foreach (FSMEnemy fsm in enemyFSM)
+            {
+                if (Vector3.Distance(collision.gameObject.transform.position, fsm.gameObject.transform.position) < distanciaAviso)
+                {
+
+                    if (fsm.Medium || fsm.Clever)//SOLO AVISA A MEIDO E INTELIGENTE
+                    {
+                        fsm.setAdvise(collision.gameObject.transform.position);
+                    }
+
+                }
+
+
+            }
+
+
+
         }
 
     }
