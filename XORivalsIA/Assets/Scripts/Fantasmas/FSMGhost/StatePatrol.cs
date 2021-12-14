@@ -1,0 +1,116 @@
+using RobustFSM.Base;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class StatePatrol : BState
+{
+
+    /// <summary>
+    /// A reference to the manual execute frequency
+    /// </summary>
+    float _manualExecuteRate = 0f;
+
+    /// <summary>
+    /// A reference to the previous manual execute time
+    /// </summary>
+    DateTime _prevManualExecuteTime;
+    private bool newTarget = true; //CAMBIAMOS DE OBJETIVO
+    private Transform taskTarget;
+
+
+    public override void Enter()
+    {
+        base.Enter();
+
+        //set the previous manual execute time
+        _prevManualExecuteTime = DateTime.Now;
+
+        foreach (Transform t in Owner.transform.GetComponentsInChildren<Transform>())
+        {
+            if (t.name == "Enemy2D")
+            {
+
+                t.GetComponent<Animator>().SetBool("Normal", true);
+                t.GetComponent<Animator>().SetBool("Alert", false);
+                t.GetComponent<Animator>().SetBool("Ask", false);
+
+            }
+        }
+
+        //Owner.following = false;
+
+
+        //set the custom update frequency
+        ((FSMEnemy)SuperMachine).SetUpdateFrequency(1f);
+        _manualExecuteRate = ((FSMEnemy)SuperMachine).ManualUpdateFrequency;
+    }
+
+    public override void Execute()
+    {
+        base.Execute();
+        SuperMachine.ChangeState<IdleMainState>();
+
+
+        if (newTarget)
+        {
+            newTarget = false;
+            //SELECCIONAMOS UN TARGET AL AZAR
+            int random = Random.Range(0, Owner.movePositionTransform.Count - 1);
+            taskTarget = Owner.movePositionTransform[random];
+        }
+
+        Owner.target.position = taskTarget.position;
+
+        //SI LLEGAMOS A UN PUNTO DE PATRULLA DEBERIAMOS IR AL SIGUIENTE
+        if (Vector3.Distance(Owner.transform.position, taskTarget.position) < 1f)
+        {
+            newTarget = true; //CAMBIAMOS DE TARGET
+        }
+
+
+
+
+
+
+    }
+
+    public override void ManualExecute()
+    {
+        base.ManualExecute();
+
+        //find the time difference
+        double timeDiff = DateTime.Now.Subtract(_prevManualExecuteTime).TotalSeconds;
+
+        //prepare the message
+        string message = string.Format("{0}::{1}::{2}", "<color=green>Invoke patrol main state manual execute.</color>", _manualExecuteRate, timeDiff);
+        Debug.Log(message);
+
+        //set the previous manual execute time
+        _prevManualExecuteTime = DateTime.Now;
+    }
+
+    /// <summary>
+    /// Retries the FSM that owns this state
+    /// </summary>
+    public FSMEnemy SuperFSM
+    {
+        get
+        {
+            return (FSMEnemy)SuperMachine;
+        }
+    }
+
+    /// <summary>
+    /// A little extra stuff. Accessing info inside the OwnerFSM
+    /// </summary>
+    public EnemyNavMesh Owner
+    {
+        get
+        {
+            return SuperFSM.Owner;
+        }
+    }
+}
+}
