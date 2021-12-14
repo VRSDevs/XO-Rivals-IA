@@ -66,7 +66,7 @@ public class ButtonScriptAI : MonoBehaviour
         DontDestroyOnLoad(thisMatch);
 
         //localPlayer = GameObject.Find("PlayerObject").GetComponent<PlayerInfo>();
-        DontDestroyOnLoad(localPlayer);      
+        localPlayer = FindObjectOfType<PlayerInfo>();
         thisMatch.PlayerOName = localPlayer.Name;
 
         //Initialize ScreenManager
@@ -180,7 +180,7 @@ public class ButtonScriptAI : MonoBehaviour
 
                 case 0:
                     //SceneManager.LoadScene("Pistolero_Off");
-                    SceneManager.LoadScene("PruebaMini");
+                    SceneManager.LoadScene("PlatformMinigame_Off");
                 break;
 
                 case 1:
