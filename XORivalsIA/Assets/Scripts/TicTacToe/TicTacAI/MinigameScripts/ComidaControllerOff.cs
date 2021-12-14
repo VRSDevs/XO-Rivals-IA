@@ -85,7 +85,7 @@ public class ComidaControllerOff : MonoBehaviour
         StartCoroutine(DefeatNumerator());
 
         // Valor a cambiar segun el color de ficha del jugador
-        if (Random.Range(0, 2) == 0)
+        if (Random.Range(0, 1) == 0)
         {
             playerO.SetActive(true);
             playerX.SetActive(false);

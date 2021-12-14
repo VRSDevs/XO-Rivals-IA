@@ -62,7 +62,7 @@ public class CarnivalControllerOff : MonoBehaviour
 
         speed = Random.Range(700,850);
         // Recoger de quien es el turno y activar los personajes necesarios
-        if (Random.Range(0,2) == 0)
+        if (Random.Range(0,1) == 0)
         {
             playerX.SetActive(false);
             playinWithO = true;
