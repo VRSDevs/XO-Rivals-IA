@@ -840,7 +840,7 @@ MonoBehaviour:
   - {fileID: 1832768179}
   - {fileID: 982574272}
   cameraFollow: {fileID: 251806933}
-  moveSpeed: 2.25
+  moveSpeed: 1.3
 --- !u!4 &251806933
 Transform:
   m_ObjectHideFlags: 0

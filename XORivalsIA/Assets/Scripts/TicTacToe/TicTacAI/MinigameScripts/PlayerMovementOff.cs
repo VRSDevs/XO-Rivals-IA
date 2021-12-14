@@ -21,6 +21,8 @@ public class PlayerMovementOff : MonoBehaviour
     public LayerMask groundLayer;
 
     public ShootDroneBehaviourTree shootDroneB;
+
+    private bool keyPressed = false;
     
     // Vida
     public bool isDead = false;
@@ -56,14 +58,35 @@ public class PlayerMovementOff : MonoBehaviour
         }
         if (Input.GetKeyDown("d"))
         {
+            keyPressed = true;
             horizontal = 1;
         }  
         if (Input.GetKeyUp("d"))
         {
-            horizontal = 0;
+            if (keyPressed == false)
+            {
+                horizontal = 0;
+            }
+
+            keyPressed = false;
+        }
+        if (Input.GetKeyDown("a"))
+        {
+            keyPressed = true;
+            horizontal = -1;
+        }
+        if (Input.GetKeyUp("a"))
+        {
+            
+            if(keyPressed == false)
+            {
+                horizontal = 0;
+            }
+
+            keyPressed = false;
         }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("w"))
         {
             JumpPhone();
         }
@@ -171,6 +194,10 @@ public class PlayerMovementOff : MonoBehaviour
     public void MoveRight()
     {
         horizontal = 1;
+    }
+    public void MoveLeft()
+    {
+        horizontal = -1;
     }
 
     public void Stop()
