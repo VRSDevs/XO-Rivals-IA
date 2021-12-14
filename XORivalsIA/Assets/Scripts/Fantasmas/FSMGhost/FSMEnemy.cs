@@ -6,9 +6,10 @@ using UnityEngine;
 public class FSMEnemy : MonoFSM
 {
     public EnemyNavMesh Owner { get; set; }
-
+    public EnemyNavMesh owner;
     public override void AddStates()
     {
+        Owner = owner;
         //set the custom update frequenct
         SetUpdateFrequency(0.1f);
 

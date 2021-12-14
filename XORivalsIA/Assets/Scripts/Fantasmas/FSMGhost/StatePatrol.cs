@@ -50,18 +50,20 @@ public class StatePatrol : BState
     public override void Execute()
     {
         base.Execute();
-        SuperMachine.ChangeState<IdleMainState>();
+
 
 
         if (newTarget)
         {
             newTarget = false;
             //SELECCIONAMOS UN TARGET AL AZAR
-            int random = Random.Range(0, Owner.movePositionTransform.Count - 1);
+            System.Random rnd = new System.Random();
+            int random = rnd.Next(0, Owner.movePositionTransform.Count);  
             taskTarget = Owner.movePositionTransform[random];
+            
         }
-
         Owner.target.position = taskTarget.position;
+
 
         //SI LLEGAMOS A UN PUNTO DE PATRULLA DEBERIAMOS IR AL SIGUIENTE
         if (Vector3.Distance(Owner.transform.position, taskTarget.position) < 1f)
@@ -113,4 +115,4 @@ public class StatePatrol : BState
         }
     }
 }
-}
+
