@@ -50,7 +50,7 @@ public class AnimationsControllerOff : MonoBehaviour
         crono = FindObjectOfType<CronometroOff>();
 
         // Recoger de quien es el turno y activar los personajes necesarios
-        if (thisMatch.PlayerOName == localPlayer.Name)
+        if (Random.Range(0, 1) == 0)
         {
             playerX.SetActive(false);
             iaO.SetActive(false);
