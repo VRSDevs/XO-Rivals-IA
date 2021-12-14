@@ -73,6 +73,29 @@ public class StatePatrol : BState
 
 
 
+        float distLuciernaga = Vector3.Distance(Luciernaga.transform.position, Owner.transform.position);
+        if ((distLuciernaga < 10f)) //HUYO
+        {
+            SuperMachine.ChangeState<StateHuir>();
+        }
+        else if (DetectPlayer_.veoPlayerDistance && DetectPlayer_.linernaDetect) //PERSIGO JUGADOR
+        {
+            SuperMachine.ChangeState<StateFollowPlayer>();
+
+        }
+        else if (SuperFSM.getAdvise()) //PERSIGO AVISO
+        {
+            SuperMachine.ChangeState<StateFollowAdvise>();
+
+        }
+        else if (PerseguirHuella) //SI ESTA DADO AVISO NO PARA HASTA LLEGAR AL AVISO
+        {
+            if (SuperFSM.Clever)
+            {
+                SuperMachine.ChangeState<StateFollowHuella>();
+            }
+           
+        }
 
 
 
@@ -114,5 +137,37 @@ public class StatePatrol : BState
             return SuperFSM.Owner;
         }
     }
+
+    public DetectPlayer DetectPlayer_
+    {
+        get
+        {
+            return SuperFSM.DetectPlayer_;
+        }
+    }
+    public GameObject Luciernaga
+    {
+        get
+        {
+            return SuperFSM.Luciernaga;
+        }
+    }
+
+    public bool PerseguirHuella
+    {
+        get
+        {
+            return SuperFSM.PerseguirHuella;
+        }
+    }
+
+    public GameObject LastHuella
+    {
+        get
+        {
+            return SuperFSM.LastHuella;
+        }
+    }
+
 }
 
