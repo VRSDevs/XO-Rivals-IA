@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CarnivalControllerOff : MonoBehaviour
 {
@@ -82,7 +83,12 @@ public class CarnivalControllerOff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenuIa");
+        }
+
         if (indicator.transform.position.y > top.position.y - 10)
         {
             goingUp = false;

@@ -191,7 +191,7 @@ public class ButtonScriptAI : MonoBehaviour
                 break;
                 
                 case 3:
-                    SceneManager.LoadScene("Fanstasmas3D_Off");
+                    SceneManager.LoadScene("Fanstasmas3D");
                 break;
 
                 case 4:

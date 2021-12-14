@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class AnimationsControllerOff : MonoBehaviour
 {
 
@@ -66,6 +66,11 @@ public class AnimationsControllerOff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenuIa");
+        }
 
         if (!crono.lost && !crono.win) return;
 
