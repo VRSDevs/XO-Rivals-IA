@@ -35,8 +35,8 @@ public class TaskHuir : Node
             {
                 //Cosas que hacer
                 Debug.Log(t.name);
-                t.GetComponent<Animator>().SetBool("Ask", true);
-                t.GetComponent<Animator>().SetBool("Normal", false);
+                t.GetComponent<Animator>().SetBool("Normal", true);
+                t.GetComponent<Animator>().SetBool("Ask", false);
                 t.GetComponent<Animator>().SetBool("Alert", false);
 
             }
