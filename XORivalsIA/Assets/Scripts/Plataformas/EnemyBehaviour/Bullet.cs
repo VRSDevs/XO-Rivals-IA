@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour {
 
     //Distance to shooter
     private float distanceToParent = 0f;
-    private const float MAXDISTTOPARENT = 30f;
+    private const float MAXDISTTOPARENT = 300000f;
     private const float SPEED = 3f;
 
     private void Start() {

@@ -9245,7 +9245,7 @@ PrefabInstance:
     - target: {fileID: 1462916994558228421, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
       propertyPath: characterO
       value: 
-      objectReference: {fileID: 387312076}
+      objectReference: {fileID: 1928096044}
     - target: {fileID: 1993973155919838317, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
       propertyPath: m_Name
       value: EnemyShootingDron
@@ -9299,12 +9299,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2054486872794598154, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.0055
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054486872794598154, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.0055
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054486872794598154, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6685
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054486872794598154, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.48
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 2054486872794598154, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.91
+      value: 1.51
       objectReference: {fileID: 0}
     - target: {fileID: 2054486872794598154, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
       propertyPath: m_LocalRotation.w
