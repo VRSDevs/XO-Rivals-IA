@@ -9242,6 +9242,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 340385757}
     m_Modifications:
+    - target: {fileID: 1132118463455013255, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5176471
+      objectReference: {fileID: 0}
     - target: {fileID: 1462916994558228421, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
       propertyPath: characterO
       value: 
@@ -9249,6 +9253,10 @@ PrefabInstance:
     - target: {fileID: 1993973155919838317, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
       propertyPath: m_Name
       value: EnemyShootingDron
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993973155919838317, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1993973155919838318, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
       propertyPath: m_RootOrder
@@ -9346,6 +9354,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 149.47
       objectReference: {fileID: 0}
+    - target: {fileID: 2953886515048266358, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_Radius
+      value: 0.09470532
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953886515048266358, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.000007702754
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953886515048266358, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.008835655
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953886515048266358, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5361180566564350032, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
       propertyPath: bullet
       value: 
@@ -9362,9 +9386,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 5727464981654551046, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727464981654551046, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5868364097701553776, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182125409438627949, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182125409438627949, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d00b6bb4396b0f44b58597956aa1cf5, type: 3}

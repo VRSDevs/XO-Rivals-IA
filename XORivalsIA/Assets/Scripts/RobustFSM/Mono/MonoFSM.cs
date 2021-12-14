@@ -450,7 +450,7 @@ namespace Assets.RobustFSM.Mono
                 string printText = MachineName + "\n" + CurrentState.StateName;
 
                 //render the label
-                Handles.Label(transform.position, printText);
+                //Handles.Label(transform.position, printText);
             }
         }
 

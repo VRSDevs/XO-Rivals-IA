@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 2953886515048266358}
   m_Layer: 0
   m_Name: bullet
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,7 +245,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1993973155919838317}
-  character: {fileID: 0}
+  characterO: {fileID: 0}
+  characterX: {fileID: 0}
+  characterPlaying: {fileID: 0}
+  posPlayer: {x: 0, y: 0, z: 0}
 --- !u!58 &2953886515048266358
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -358,7 +361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d33b5f013139346a3e9aa9dce83dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 5361180566564350032}
 --- !u!60 &5868364097701553776
 PolygonCollider2D:
   m_ObjectHideFlags: 0
