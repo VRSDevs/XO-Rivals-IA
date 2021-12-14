@@ -24,19 +24,8 @@ public class EnemyBT : BehaviorTree.Tree
     public bool silly = false;
 
 
-
-    //SPRITES
-    public Sprite spriteClever;
-    public Sprite spriteAlertaClever;
-    public Sprite spritePreguntaClever;
-
-    public Sprite spriteMedium;
-    public Sprite spriteAlertaMedium;
-    public Sprite spritePreguntaMedium;
-
-    public Sprite spriteSilly;
-    public Sprite spriteAlertaSilly;
-    public Sprite spritePreguntaSilly;
+    public GameObject luciernaga;
+    public float distanciaMiedo = 10f;
 
 
     protected override Node SetupTree()
