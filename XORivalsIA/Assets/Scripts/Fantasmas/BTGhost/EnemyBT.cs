@@ -26,6 +26,8 @@ public class EnemyBT : BehaviorTree.Tree
 
     public GameObject luciernaga;
     public float distanciaMiedo = 10f;
+    public float tiempoMiedo = 5;
+    public bool asustado = false;
 
 
     protected override Node SetupTree()
@@ -223,6 +225,20 @@ public class EnemyBT : BehaviorTree.Tree
     public bool getAdvise()
     {
         return advised;
+    }
+    IEnumerator dejarDeTenerMiedo()
+    {
+
+        yield return new WaitForSeconds(tiempoMiedo);
+
+        asustado = false;
+
+    }
+
+    public void dejarMiedoEnTiempo()
+    {
+        StartCoroutine(dejarDeTenerMiedo());
+
     }
 
 }
