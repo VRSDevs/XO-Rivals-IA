@@ -33,39 +33,24 @@ public class MovePlayer : MonoBehaviour
     public GameObject xSprite;
     public GameObject oSprite;
 
-    public Match thisMatch;
 
-    public PlayerInfo localPlayer;
-    private GameManager _gameManager;
+
 
     private bool vivo = true;
 
     private void Awake()
     {
         player = GetComponent<Rigidbody>();
-        _gameManager = FindObjectOfType<GameManager>();
-        thisMatch = _gameManager.PlayerMatches[PhotonNetwork.CurrentRoom.Name];
-        localPlayer = GameObject.Find("PlayerObject").GetComponent<PlayerInfo>();
+   
     }
 
     // Start is called before the first frame update
     void Start()
     {
 
-        // Recoger de quien es el turno y activar los personajes necesarios
-        if (thisMatch.PlayerOName == localPlayer.Name) //TURNO O
-        {
-            xSprite.SetActive(false);
-
+  
             anim = animO;
-        }
-        else
-        {
-            oSprite.SetActive(false);                   //TURNO X
-            anim = animX;
-        }
-
-
+     
 
     }
 

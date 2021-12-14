@@ -24,19 +24,10 @@ public class EnemyBT : BehaviorTree.Tree
     public bool silly = false;
 
 
-
-    //SPRITES
-    public Sprite spriteClever;
-    public Sprite spriteAlertaClever;
-    public Sprite spritePreguntaClever;
-
-    public Sprite spriteMedium;
-    public Sprite spriteAlertaMedium;
-    public Sprite spritePreguntaMedium;
-
-    public Sprite spriteSilly;
-    public Sprite spriteAlertaSilly;
-    public Sprite spritePreguntaSilly;
+    public GameObject luciernaga;
+    public float distanciaMiedo = 10f;
+    public float tiempoMiedo = 5;
+    public bool asustado = false;
 
 
     protected override Node SetupTree()
@@ -49,7 +40,11 @@ public class EnemyBT : BehaviorTree.Tree
 
             root = new Selector(new List<Node>
             {
-
+                 new Sequence(new List<Node>                      //SEGUNDO COMPROBAMOS SI HEMOS SIDO AVISADOS
+                 {
+                     new CheckHuir(luciernaga,this),
+                     new TaskHuir(this,enemyNav,luciernaga),
+                 }),
 
                 new Sequence(new List<Node>                      // PRIMERO COMPROBAMOS SI VEMOS AL ENEMIGO
                 {
@@ -105,7 +100,11 @@ public class EnemyBT : BehaviorTree.Tree
 
             root = new Selector(new List<Node>
             {
-
+                  new Sequence(new List<Node>                      //SEGUNDO COMPROBAMOS SI HEMOS SIDO AVISADOS
+                 {
+                     new CheckHuir(luciernaga,this),
+                     new TaskHuir(this,enemyNav,luciernaga),
+                 }),
 
                 new Sequence(new List<Node>                      // PRIMERO COMPROBAMOS SI VEMOS AL ENEMIGO
                 {
@@ -162,7 +161,11 @@ public class EnemyBT : BehaviorTree.Tree
 
             root = new Selector(new List<Node>
             {
-
+                  new Sequence(new List<Node>                      //SEGUNDO COMPROBAMOS SI HEMOS SIDO AVISADOS
+                 {
+                     new CheckHuir(luciernaga,this),
+                     new TaskHuir(this,enemyNav,luciernaga),
+                 }),
 
                 new Sequence(new List<Node>                      // PRIMERO COMPROBAMOS SI VEMOS AL ENEMIGO
                 {
@@ -234,6 +237,20 @@ public class EnemyBT : BehaviorTree.Tree
     public bool getAdvise()
     {
         return advised;
+    }
+    IEnumerator dejarDeTenerMiedo()
+    {
+
+        yield return new WaitForSeconds(tiempoMiedo);
+
+        asustado = false;
+
+    }
+
+    public void dejarMiedoEnTiempo()
+    {
+        StartCoroutine(dejarDeTenerMiedo());
+
     }
 
 }

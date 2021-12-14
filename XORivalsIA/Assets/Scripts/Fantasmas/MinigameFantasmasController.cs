@@ -16,7 +16,6 @@ public class MinigameFantasmasController : MonoBehaviour
     public GameObject downButton;
 
     // Gamemanager
-    private GameManager _gameManager;
 
     //Musica
     public AudioClip MusicaBosque;
@@ -33,15 +32,13 @@ public class MinigameFantasmasController : MonoBehaviour
             enem.SetActive(false);
         }
 
-        _gameManager = FindObjectOfType<GameManager>();
 
-        if (!_gameManager.IsWebGLMobile)
-        {
+       
             leftButton.SetActive(false);
             rightButton.SetActive(false);
             upButton.SetActive(false);
             downButton.SetActive(false);
-        }
+        
         
         FindObjectOfType<AudioManager>().StopAllSongs();
         FindObjectOfType<AudioManager>().ChangeMusic(MusicaBosque,"Tic-Tac-Toe");

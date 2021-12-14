@@ -12,12 +12,12 @@ public class RandomWinTarget : MonoBehaviour
 
         if (randomWin == 0) //SALIDA 0
         {
-           
+            GameObject.FindGameObjectsWithTag("Win1")[0].SetActive(false);
             GameObject.FindGameObjectsWithTag("Win2")[0].SetActive(false);
             GameObject.FindGameObjectsWithTag("Win3")[0].SetActive(false);
             GameObject.FindGameObjectsWithTag("Win4")[0].SetActive(false);
 
-            GameObject.Find("SalidaCerrada1").SetActive(false);
+            //GameObject.Find("SalidaCerrada1").SetActive(false);
 
         }
 
@@ -25,10 +25,11 @@ public class RandomWinTarget : MonoBehaviour
         {
 
             GameObject.FindGameObjectsWithTag("Win1")[0].SetActive(false);
+            GameObject.FindGameObjectsWithTag("Win2")[0].SetActive(false);
             GameObject.FindGameObjectsWithTag("Win3")[0].SetActive(false);
             GameObject.FindGameObjectsWithTag("Win4")[0].SetActive(false);
 
-            GameObject.Find("SalidaCerrada2").SetActive(false);
+            //GameObject.Find("SalidaCerrada2").SetActive(false);
 
         }
 
@@ -36,9 +37,10 @@ public class RandomWinTarget : MonoBehaviour
         {
             GameObject.FindGameObjectsWithTag("Win1")[0].SetActive(false);
             GameObject.FindGameObjectsWithTag("Win2")[0].SetActive(false);
+            GameObject.FindGameObjectsWithTag("Win3")[0].SetActive(false);
             GameObject.FindGameObjectsWithTag("Win4")[0].SetActive(false);
 
-            GameObject.Find("SalidaCerrada3").SetActive(false);
+            //GameObject.Find("SalidaCerrada3").SetActive(false);
 
         }
 
@@ -47,8 +49,9 @@ public class RandomWinTarget : MonoBehaviour
             GameObject.FindGameObjectsWithTag("Win1")[0].SetActive(false);
             GameObject.FindGameObjectsWithTag("Win2")[0].SetActive(false);
             GameObject.FindGameObjectsWithTag("Win3")[0].SetActive(false);
+            GameObject.FindGameObjectsWithTag("Win4")[0].SetActive(false);
 
-            GameObject.Find("SalidaCerrada4").SetActive(false);
+            //GameObject.Find("SalidaCerrada4").SetActive(false);
 
         }
 
