@@ -40,6 +40,8 @@ public class PlayerMovementOff : MonoBehaviour
     private float speed = 5f;
     private float jumpingPower = 6f;
 
+    private bool isFacingRight = true;
+
     private MatchAI thisMatch;
 
     private void Awake()
@@ -56,39 +58,39 @@ public class PlayerMovementOff : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenuIa");
         }
+
         if (Input.GetKeyDown("d"))
         {
-            keyPressed = true;
             horizontal = 1;
         }  
-        if (Input.GetKeyUp("d"))
-        {
-            if (keyPressed == false)
-            {
-                horizontal = 0;
-            }
-
-            keyPressed = false;
-        }
+        
         if (Input.GetKeyDown("a"))
         {
-            keyPressed = true;
             horizontal = -1;
         }
-        if (Input.GetKeyUp("a"))
-        {
-            
-            if(keyPressed == false)
-            {
-                horizontal = 0;
-            }
 
-            keyPressed = false;
-        }
-
-        if (Input.GetKeyDown("w"))
+        if (Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.Space))
         {
             JumpPhone();
+        }
+
+        if (Input.GetKeyUp("a"))
+        {
+            horizontal = 0;
+        }
+
+        if (Input.GetKeyUp("d"))
+        {
+            horizontal = 0;
+        }
+
+        if (!isFacingRight && horizontal > 0f)
+        {
+            Flip();
+        }
+        else if (isFacingRight && horizontal < 0f)
+        {
+            Flip();
         }
 
         if (win)
@@ -231,5 +233,13 @@ public class PlayerMovementOff : MonoBehaviour
         thisMatch.TurnMoment = 2;
         PlayerPrefs.SetInt("minigameWin", 1);
         SceneManager.LoadScene("TicTac_AI");
+    }
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;
     }
 }
