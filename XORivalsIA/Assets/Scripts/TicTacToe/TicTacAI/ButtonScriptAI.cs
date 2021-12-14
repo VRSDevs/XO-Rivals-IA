@@ -179,8 +179,7 @@ public class ButtonScriptAI : MonoBehaviour
             switch(thisMatch.MiniGameChosen){
 
                 case 0:
-                    //SceneManager.LoadScene("Pistolero_Off");
-                    SceneManager.LoadScene("PlatformMinigame_Off");
+                    SceneManager.LoadScene("Pistolero_Off");
                 break;
 
                 case 1:

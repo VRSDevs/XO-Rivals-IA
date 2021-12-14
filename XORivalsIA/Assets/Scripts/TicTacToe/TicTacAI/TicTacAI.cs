@@ -430,8 +430,7 @@ public class TicTacAI : MonoBehaviour
         //Save new position
         thisMatch.FilledPositions[nextRow,nextCol] = ai;
         thisMatch.NumFilled++;
-        //thisMatch.MiniGameChosen = Random.Range(0,5);
-        thisMatch.MiniGameChosen = 0;
+        thisMatch.MiniGameChosen = Random.Range(0,5);
 
         UpdateState();
         screenManagerReference.UpdateTurn();

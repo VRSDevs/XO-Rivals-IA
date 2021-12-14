@@ -108,8 +108,7 @@ public class ScreenManagerAI : MonoBehaviour
 
     public void MinigameSelection(int n){
 
-        //buttonsScript.thisMatch.MiniGameChosen = n;
-        buttonsScript.thisMatch.MiniGameChosen = 0;
+        buttonsScript.thisMatch.MiniGameChosen = n;
         miniGameChoosing.SetActive(false);
         ticTacScreen.SetActive(true);
 

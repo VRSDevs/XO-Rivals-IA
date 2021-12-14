@@ -70,8 +70,7 @@ public class MatchAI : MonoBehaviour
         PlayerXName = "AI";
         WhosTurn = "";
         TurnMoment = 0;
-        //MiniGameChosen = Random.Range(0,5);
-        MiniGameChosen = 0;
+        MiniGameChosen = Random.Range(0,5);
 
         FilledPositions = new int[3, 3];
         for (int i = 0; i < FilledPositions.GetLength(0); i++)
