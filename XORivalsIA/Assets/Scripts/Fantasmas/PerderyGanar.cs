@@ -91,21 +91,21 @@ public class PerderyGanar : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        if (seconds == -1)//SI AGUANTAS 30 SEGUNDOS GANAS
+        if (seconds == 0)//SI AGUANTAS 30 SEGUNDOS GANAS
         {
             seconds--;
             if (!gameEnded)
             {
-                lost = true;
+
                 gameEnded = true;
-                Invoke("DefeatCanvas", 1f); //SI ACABA EL TIEMPO PIERDES
+                Invoke("VictoryCanvas", 1f); //SI ACABA EL TIEMPO PIERDES
             }
         }
         else
         {
             if(seconds != -1)
             {
-                seconds++;
+                seconds--;
                 textoSegundos.text = "" + seconds;
                 StartCoroutine(contarSegundosParaGanar());
             }
@@ -123,7 +123,7 @@ public class PerderyGanar : MonoBehaviour
         {
             textoSegundos.gameObject.SetActive(true);
             crono.SetActive(true);
-            seconds = 0;
+            seconds = 60;
             textoCuentaAtras.text = "";
             textoSegundos.text = "" + seconds;
 
@@ -196,14 +196,14 @@ public class PerderyGanar : MonoBehaviour
     public void Defeat()
     {
         PlayerPrefs.SetInt("minigameWin", 0);
-        FindObjectOfType<GameManager>().PlayerMatches[Photon.Pun.PhotonNetwork.CurrentRoom.Name].TurnMoment = 2;
+        //FindObjectOfType<GameManager>().PlayerMatches[Photon.Pun.PhotonNetwork.CurrentRoom.Name].TurnMoment = 2;
         SceneManager.LoadScene("TicTacToe_Server");
     }
 
     public void Victory()
     {
         PlayerPrefs.SetInt("minigameWin", 1);
-        FindObjectOfType<GameManager>().PlayerMatches[Photon.Pun.PhotonNetwork.CurrentRoom.Name].TurnMoment = 2;
+        //FindObjectOfType<GameManager>().PlayerMatches[Photon.Pun.PhotonNetwork.CurrentRoom.Name].TurnMoment = 2;
         SceneManager.LoadScene("TicTacToe_Server");
     }
 
