@@ -7,6 +7,16 @@ public class MainMenuAI : MonoBehaviour
         SceneManager.LoadScene("TicTac_AI");
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenuIa");
+    }
+
     public void GoToPistolero(){
         SceneManager.LoadScene("Pistolero_Off");
     }

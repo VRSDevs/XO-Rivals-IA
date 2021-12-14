@@ -912,9 +912,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TicTacToeController, Assembly-CSharp
-        m_MethodName: GoBack
+      - m_Target: {fileID: 131233170}
+        m_TargetAssemblyTypeName: MainMenuAI, Assembly-CSharp
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1123,9 +1123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TicTacToeController, Assembly-CSharp
-        m_MethodName: GoBack
+      - m_Target: {fileID: 131233170}
+        m_TargetAssemblyTypeName: MainMenuAI, Assembly-CSharp
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1187,6 +1187,7 @@ GameObject:
   - component: {fileID: 131233166}
   - component: {fileID: 131233165}
   - component: {fileID: 131233169}
+  - component: {fileID: 131233170}
   m_Layer: 5
   m_Name: MainGame
   m_TagString: Untagged
@@ -1350,6 +1351,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   butonScriptReference: {fileID: 247037161}
+--- !u!114 &131233170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131233163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4929917500930c4180658f2875b54c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &138966600
 GameObject:
   m_ObjectHideFlags: 0
@@ -6150,18 +6163,18 @@ PrefabInstance:
     - target: {fileID: 6798205998141208536, guid: 3476a4bc1833a9c499944315b3cc4e18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 131233170}
     - target: {fileID: 6798205998141208536, guid: 3476a4bc1833a9c499944315b3cc4e18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6798205998141208536, guid: 3476a4bc1833a9c499944315b3cc4e18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Surrender
+      value: GoToMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6798205998141208536, guid: 3476a4bc1833a9c499944315b3cc4e18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TicTacToeController, Assembly-CSharp
+      value: MainMenuAI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6798205998141208536, guid: 3476a4bc1833a9c499944315b3cc4e18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -6501,9 +6514,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TicTacToeController, Assembly-CSharp
-        m_MethodName: Surrender
+      - m_Target: {fileID: 131233170}
+        m_TargetAssemblyTypeName: MainMenuAI, Assembly-CSharp
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7007,7 +7020,7 @@ PrefabInstance:
     - target: {fileID: 6248065804999505555, guid: 3f19306fedaee1544a4769476ff979d2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 798ca7d1ecf48ae4d841c01a0ce1a101, type: 3}
+      objectReference: {fileID: 21300000, guid: 8d03624c019b0ab4d8dcfbb5d11563da, type: 3}
     - target: {fileID: 6248065804999505556, guid: 3f19306fedaee1544a4769476ff979d2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -7161,6 +7174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96c6058740c22c4fa91870be271aeda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actualState: 0
 --- !u!4 &1481371696
 Transform:
   m_ObjectHideFlags: 0
@@ -7187,7 +7201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a531e1d18c158764a9692e9bf2dd0a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  UserID: 
   Name: AV
   Online: 0
   MatchId: -1
@@ -8035,9 +8049,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TicTacToeController, Assembly-CSharp
-        m_MethodName: GoBack
+      - m_Target: {fileID: 131233170}
+        m_TargetAssemblyTypeName: MainMenuAI, Assembly-CSharp
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
