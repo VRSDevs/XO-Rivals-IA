@@ -39,11 +39,9 @@ public class FollowDroneStateMachine : MonoBehaviour{
 
         thisMatch = FindObjectOfType<MatchAI>();
         localPlayer = FindObjectOfType<PlayerInfo>();
-        if(localPlayer.Name == thisMatch.PlayerOName){
+
             characterPlaying = characterO;
-        }else{
-            characterPlaying = characterX;
-        }
+   
         characterPlaying = characterO;
     }
 

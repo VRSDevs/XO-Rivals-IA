@@ -31,11 +31,9 @@ public class ShootDroneBehaviourTree : MonoBehaviour {
 
         thisMatch = FindObjectOfType<MatchAI>();
         localPlayer = FindObjectOfType<PlayerInfo>();
-        if(localPlayer.Name == thisMatch.PlayerOName){
+
             characterPlaying = characterO;
-        }else{
-            characterPlaying = characterX;
-        }
+  
 
         //Start variables
         timeBetweenShoots = Random.Range(0.5f, 1.25f);
@@ -86,6 +84,7 @@ public class ShootDroneBehaviourTree : MonoBehaviour {
 
     void Update(){
 
+        Debug.Log("detecto?      " + charDetected);
         //Check character if it has been detected
         if(charDetected){
             timePassed += Time.deltaTime;
@@ -104,7 +103,7 @@ public class ShootDroneBehaviourTree : MonoBehaviour {
         Debug.Log("Vigilando...");
         //Rotate cone around enemy
         if(visionCone.activeSelf)
-            visionCone.transform.RotateAround(this.transform.position, Vector3.back, 20 * Time.deltaTime);
+            visionCone.transform.RotateAround(this.transform.position, Vector3.back, 40 * Time.deltaTime);
     }
 
     void Shoot(){
@@ -169,7 +168,7 @@ public class ShootDroneBehaviourTree : MonoBehaviour {
         }
 
         //Update character detected
-        visionCone.SetActive(!b);
+        //visionCone.SetActive(!b);
         charDetected = b;
         newConditionNode.updateValue(charDetected);
     }

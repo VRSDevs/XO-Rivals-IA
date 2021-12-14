@@ -19,6 +19,8 @@ public class PlayerMovementOff : MonoBehaviour
     public SFX_Manager_Platform sounds;
     
     public LayerMask groundLayer;
+
+    public ShootDroneBehaviourTree shootDroneB;
     
     // Vida
     public bool isDead = false;
@@ -48,7 +50,10 @@ public class PlayerMovementOff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenuIa");
+        }
         if (Input.GetKeyDown("d"))
         {
             horizontal = 1;
@@ -134,6 +139,15 @@ public class PlayerMovementOff : MonoBehaviour
         if (context.ReadValue<Vector2>().x < 0) { return; }
         horizontal = context.ReadValue<Vector2>().x;
         //sounds.playWalkSound();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        shootDroneB.CharacterDetected(true);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        shootDroneB.CharacterDetected(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

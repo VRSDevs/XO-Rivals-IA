@@ -42,12 +42,10 @@ public class RobotStateMachine : MonoBehaviour{
 
         thisMatch = FindObjectOfType<MatchAI>();
         localPlayer = FindObjectOfType<PlayerInfo>();
-        if(localPlayer.Name == thisMatch.PlayerOName){
+       
             characterPlaying = characterO;
-        }else{
-            characterPlaying = characterX;
-        }
-        timeToJump = Random.Range(0.25f, 0.75f);
+      
+        timeToJump = Random.Range(0.25f, 2f);
         originalY = this.transform.position.y;
         maxY = originalY + 2f;
     }
