@@ -14378,6 +14378,8 @@ MonoBehaviour:
   silly: 1
   luciernaga: {fileID: 452611566}
   distanciaMiedo: 10
+  tiempoMiedo: 4
+  asustado: 0
 --- !u!114 &598204787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16082,6 +16084,8 @@ MonoBehaviour:
   silly: 0
   luciernaga: {fileID: 452611566}
   distanciaMiedo: 10
+  tiempoMiedo: 4
+  asustado: 0
 --- !u!114 &693027848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20041,7 +20045,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -22091,6 +22095,8 @@ MonoBehaviour:
   silly: 0
   luciernaga: {fileID: 452611566}
   distanciaMiedo: 10
+  tiempoMiedo: 4
+  asustado: 0
 --- !u!114 &961382810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32989,6 +32995,8 @@ MonoBehaviour:
   silly: 1
   luciernaga: {fileID: 452611566}
   distanciaMiedo: 10
+  tiempoMiedo: 4
+  asustado: 0
 --- !u!54 &1492331041
 Rigidbody:
   m_ObjectHideFlags: 0
