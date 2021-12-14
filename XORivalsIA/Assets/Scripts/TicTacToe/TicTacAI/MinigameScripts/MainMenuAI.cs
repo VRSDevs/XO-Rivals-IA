@@ -12,15 +12,20 @@ public class MainMenuAI : MonoBehaviour
     }
 
     public void GoToPlatform(){
-        SceneManager.LoadScene("PlarformMinigame_Off");
+        SceneManager.LoadScene("PlatformMinigame_Off");
     }
 
     public void GoToFantasmas(){
-        SceneManager.LoadScene("Fantasmas3D_Off");
+        SceneManager.LoadScene("Fanstasmas3D");
     }
 
     public void GoToCarnival(){
         SceneManager.LoadScene("CarnivalMinigame_Off");
+    }
+
+    public void GoToCocinitas()
+    {
+        SceneManager.LoadScene("MinijuegoComida_Off");
     }
 
 }

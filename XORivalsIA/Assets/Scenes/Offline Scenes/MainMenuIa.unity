@@ -3011,7 +3011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 416, y: -89}
+  m_AnchoredPosition: {x: 416, y: -155}
   m_SizeDelta: {x: 330, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1000252731
@@ -3508,7 +3508,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 756623121}
         m_TargetAssemblyTypeName: MainMenuAI, Assembly-CSharp
-        m_MethodName: GoToPistolero
+        m_MethodName: GoToCocinitas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4108,7 +4108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 416, y: 21}
+  m_AnchoredPosition: {x: 416, y: -45}
   m_SizeDelta: {x: 330, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1397945997
@@ -5590,7 +5590,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 416, y: 122}
+  m_AnchoredPosition: {x: 416, y: 56}
   m_SizeDelta: {x: 330, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1977601567
