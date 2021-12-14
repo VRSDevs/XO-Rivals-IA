@@ -59,12 +59,12 @@ public class PlayerMovementOff : MonoBehaviour
             SceneManager.LoadScene("MainMenuIa");
         }
 
-        if (Input.GetKeyDown("d"))
+        if (Input.GetKeyDown("d") || Input.GetKey("d"))
         {
             horizontal = 1;
         }  
         
-        if (Input.GetKeyDown("a"))
+        if (Input.GetKeyDown("a") || Input.GetKey("a"))
         {
             horizontal = -1;
         }
