@@ -14186,6 +14186,7 @@ GameObject:
   - component: {fileID: 598204779}
   - component: {fileID: 598204786}
   - component: {fileID: 598204787}
+  - component: {fileID: 598204789}
   - component: {fileID: 598204788}
   m_Layer: 9
   m_Name: Enemy3D
@@ -14400,7 +14401,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598204778}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcd677d25c23c9c44b4a316f39c34838, type: 3}
   m_Name: 
@@ -14415,6 +14416,21 @@ MonoBehaviour:
   - {fileID: 693027849}
   - {fileID: 961382811}
   - {fileID: 1492331049}
+--- !u!114 &598204789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598204778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc06435983f2ae848a053efb20398362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMesh: {fileID: 0}
+  detect: {fileID: 2145088379}
+  luciernaga: {fileID: 893686478}
 --- !u!1 &616246649
 GameObject:
   m_ObjectHideFlags: 0
@@ -15915,6 +15931,7 @@ GameObject:
   - component: {fileID: 693027840}
   - component: {fileID: 693027847}
   - component: {fileID: 693027848}
+  - component: {fileID: 693027850}
   - component: {fileID: 693027849}
   m_Layer: 9
   m_Name: Enemy3D
@@ -16129,7 +16146,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693027839}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcd677d25c23c9c44b4a316f39c34838, type: 3}
   m_Name: 
@@ -16144,6 +16161,21 @@ MonoBehaviour:
   - {fileID: 961382811}
   - {fileID: 598204788}
   - {fileID: 1492331049}
+--- !u!114 &693027850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693027839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc06435983f2ae848a053efb20398362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMesh: {fileID: 0}
+  detect: {fileID: 1698231042}
+  luciernaga: {fileID: 893686478}
 --- !u!1 &704841107
 GameObject:
   m_ObjectHideFlags: 0
@@ -21949,6 +21981,7 @@ GameObject:
   - component: {fileID: 961382808}
   - component: {fileID: 961382809}
   - component: {fileID: 961382810}
+  - component: {fileID: 961382812}
   - component: {fileID: 961382811}
   m_Layer: 9
   m_Name: Enemy3D
@@ -22163,7 +22196,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961382801}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcd677d25c23c9c44b4a316f39c34838, type: 3}
   m_Name: 
@@ -22178,6 +22211,21 @@ MonoBehaviour:
   - {fileID: 693027849}
   - {fileID: 598204788}
   - {fileID: 1492331049}
+--- !u!114 &961382812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961382801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc06435983f2ae848a053efb20398362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMesh: {fileID: 0}
+  detect: {fileID: 405383477}
+  luciernaga: {fileID: 893686478}
 --- !u!1 &971916223
 GameObject:
   m_ObjectHideFlags: 0
@@ -33028,6 +33076,7 @@ GameObject:
   - component: {fileID: 1492331041}
   - component: {fileID: 1492331040}
   - component: {fileID: 1492331048}
+  - component: {fileID: 1492331050}
   - component: {fileID: 1492331049}
   m_Layer: 9
   m_Name: Enemy3D
@@ -33242,7 +33291,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492331039}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcd677d25c23c9c44b4a316f39c34838, type: 3}
   m_Name: 
@@ -33257,6 +33306,21 @@ MonoBehaviour:
   - {fileID: 693027849}
   - {fileID: 961382811}
   - {fileID: 598204788}
+--- !u!114 &1492331050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492331039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc06435983f2ae848a053efb20398362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMesh: {fileID: 0}
+  detect: {fileID: 761693034}
+  luciernaga: {fileID: 893686478}
 --- !u!1 &1499532462
 GameObject:
   m_ObjectHideFlags: 0
