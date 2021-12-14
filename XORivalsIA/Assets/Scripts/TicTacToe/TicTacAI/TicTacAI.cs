@@ -427,9 +427,17 @@ public class TicTacAI : MonoBehaviour
             thisMatch = butonScriptReference.thisMatch;
         }
         
-        //Save new position
-        thisMatch.FilledPositions[nextRow,nextCol] = ai;
-        thisMatch.NumFilled++;
+        //Probability of "winning"
+        int rand = Random.Range(0, 3);
+        if(rand < 2){
+            Debug.Log("AI dice: Toma! He ganado!");
+            //Save new position
+            thisMatch.FilledPositions[nextRow,nextCol] = ai;
+            thisMatch.NumFilled++;   
+        }else{
+            Debug.Log("AI dice: Oh no, he perdido!");
+        }
+        
         thisMatch.MiniGameChosen = Random.Range(0,5);
 
         UpdateState();

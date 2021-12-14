@@ -100,7 +100,7 @@ public class ShootDroneBehaviourTree : MonoBehaviour {
 
     void RotateView(){
 
-        Debug.Log("Vigilando...");
+        //Debug.Log("Vigilando...");
         //Rotate cone around enemy
         if(visionCone.activeSelf)
             visionCone.transform.RotateAround(this.transform.position, Vector3.back, 40 * Time.deltaTime);
@@ -112,7 +112,7 @@ public class ShootDroneBehaviourTree : MonoBehaviour {
         timeBetweenShoots -= Time.deltaTime;
     
         if(timeBetweenShoots <= 0){
-            Debug.Log("Pium pium");
+            //Debug.Log("Pium pium");
 
             //Shoot a bullet
             GameObject newBullet = (GameObject) Instantiate(bulletScript.gameObject, transform.position, transform.rotation);
@@ -134,7 +134,7 @@ public class ShootDroneBehaviourTree : MonoBehaviour {
         timeBetweenShoots -= Time.deltaTime;
     
         if(timeBetweenShoots <= 0){
-            Debug.Log("Doble pium pium");
+            //Debug.Log("Doble pium pium");
 
             //Shoot a bullet
             GameObject newBullet1 = (GameObject) Instantiate(bulletScript.gameObject, transform.position + new Vector3(-1f, 0f, 0f), transform.rotation);
@@ -154,7 +154,7 @@ public class ShootDroneBehaviourTree : MonoBehaviour {
 
     void RotateSelf(){
 
-        Debug.Log("Croqueteo");
+        //Debug.Log("Croqueteo");
 
         //Rotate towards character    
     }
@@ -162,9 +162,9 @@ public class ShootDroneBehaviourTree : MonoBehaviour {
     public void CharacterDetected(bool b){
 
         if(b){
-            Debug.Log("Te he visto");
+            //Debug.Log("Te he visto");
         }else{
-            Debug.Log("Pos adios");
+            //Debug.Log("Pos adios");
         }
 
         //Update character detected

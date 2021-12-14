@@ -23,6 +23,7 @@ public class PerderyGanar : MonoBehaviour
     public GameObject crono;
     public List<GameObject> enemigos;
     private bool lost = false;
+    private MatchAI thisMatch;
 
     public Camera mainCamera;
     public bool acercarCamBool =  false;
@@ -30,6 +31,7 @@ public class PerderyGanar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        thisMatch = FindObjectOfType<MatchAI>();
         textoCuentaAtras.text = "" + seconds;
         textoSegundos.gameObject.SetActive(false);
         crono.SetActive(false);
@@ -196,15 +198,15 @@ public class PerderyGanar : MonoBehaviour
     public void Defeat()
     {
         PlayerPrefs.SetInt("minigameWin", 0);
-        FindObjectOfType<GameManager>().PlayerMatches[Photon.Pun.PhotonNetwork.CurrentRoom.Name].TurnMoment = 2;
-        SceneManager.LoadScene("TicTacToe_Server");
+        thisMatch.TurnMoment = 2;
+        SceneManager.LoadScene("TicTac_AI");
     }
 
     public void Victory()
     {
         PlayerPrefs.SetInt("minigameWin", 1);
-        FindObjectOfType<GameManager>().PlayerMatches[Photon.Pun.PhotonNetwork.CurrentRoom.Name].TurnMoment = 2;
-        SceneManager.LoadScene("TicTacToe_Server");
+        thisMatch.TurnMoment = 2;
+        SceneManager.LoadScene("TicTac_AI");
     }
 
 

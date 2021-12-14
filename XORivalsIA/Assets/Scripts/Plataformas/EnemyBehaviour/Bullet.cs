@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour {
         //Update distance to parent
         distanceToParent = Vector3.Distance(this.transform.position, posPlayer);
 
-        Debug.Log(distanceToParent);
+        //Debug.Log(distanceToParent);
         //If distance is greater than max, hide
         if(distanceToParent <= 0.01f){
             Destroy(this.gameObject);
