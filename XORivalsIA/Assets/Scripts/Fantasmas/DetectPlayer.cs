@@ -42,9 +42,7 @@ public class DetectPlayer : MonoBehaviour
         }
 
 
-        Debug.Log(veoPlayerDistance + "PLAYER DISTANCE");
-        Debug.Log(veoPlayerRadio + "PLAYER RADIO");
-        Debug.Log(linernaDetect + "LINTERNA DETECT");
+
 
        // Debug.DrawRay(transform.position, player.transform.position - this.transform.position, Color.green);
 
