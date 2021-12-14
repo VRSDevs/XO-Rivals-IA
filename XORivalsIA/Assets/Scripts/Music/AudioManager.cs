@@ -10,9 +10,7 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
         if (FindObjectsOfType<AudioManager>().Length < 2)
-        {
-            Debug.Log("No hay AudioManager duplicado");
-            
+        {            
             // Añadir componente de audio a cada sonido en el array
             foreach (Sound s in sounds)
             {

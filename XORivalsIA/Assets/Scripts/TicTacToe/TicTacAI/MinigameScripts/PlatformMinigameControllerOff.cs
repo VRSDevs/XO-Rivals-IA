@@ -3,9 +3,6 @@ using UnityEngine;
 public class PlatformMinigameControllerOff : MonoBehaviour
 { 
 
-    // Gamemanager
-    private GameManager _gameManager;
-
     public MatchAI thisMatch;
 
     public PlayerInfo localPlayer;
@@ -49,7 +46,6 @@ public class PlatformMinigameControllerOff : MonoBehaviour
 
     private void Awake()
     {
-        _gameManager = FindObjectOfType<GameManager>();
         thisMatch = FindObjectOfType<MatchAI>();
         //localPlayer = GameObject.Find("PlayerObject").GetComponent<PlayerInfo>();
         localPlayer = FindObjectOfType<PlayerInfo>();
@@ -77,24 +73,14 @@ public class PlatformMinigameControllerOff : MonoBehaviour
                 break;
         }
 
-        if (thisMatch.PlayerOName == localPlayer.Name)
-        {
-            playerX.SetActive(false);
-            flag1.gameObject.GetComponent<SpriteRenderer>().sprite = flagSpriteO;
-            flag2.gameObject.GetComponent<SpriteRenderer>().sprite = flagSpriteO;
-            flag3.gameObject.GetComponent<SpriteRenderer>().sprite = flagSpriteO;       
-        }
-        else
-        {
-            playerO.SetActive(false);
-        }
+        playerX.SetActive(false);
+        flag1.gameObject.GetComponent<SpriteRenderer>().sprite = flagSpriteO;
+        flag2.gameObject.GetComponent<SpriteRenderer>().sprite = flagSpriteO;
+        flag3.gameObject.GetComponent<SpriteRenderer>().sprite = flagSpriteO;       
 
-        if (!_gameManager.IsWebGLMobile)
-        {
-            jumpButton.SetActive(false);
-            rightButton.SetActive(false);
-        }
-        
+        jumpButton.SetActive(false);
+        rightButton.SetActive(false);
+
         FindObjectOfType<AudioManager>().StopAllSongs();
         FindObjectOfType<AudioManager>().ChangeMusic(PlatformMusic,"Tic-Tac-Toe");
     }

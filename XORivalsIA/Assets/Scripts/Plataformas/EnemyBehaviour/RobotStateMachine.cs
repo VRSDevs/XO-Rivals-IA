@@ -13,8 +13,7 @@ public class RobotStateMachine : MonoBehaviour{
     private GameObject characterPlaying;
     
     //Game variables
-    private GameManager gameState;
-    private Match thisMatch;
+    private MatchAI thisMatch;
     private PlayerInfo localPlayer;    
 
     //State
@@ -41,16 +40,14 @@ public class RobotStateMachine : MonoBehaviour{
 
         nextPoint = points[0].transform;
 
-        gameState = FindObjectOfType<GameManager>();
-        thisMatch = gameState.PlayerMatches[PhotonNetwork.CurrentRoom.Name];
-        localPlayer = GameObject.Find("PlayerObject").GetComponent<PlayerInfo>();
+        thisMatch = FindObjectOfType<MatchAI>();
+        localPlayer = FindObjectOfType<PlayerInfo>();
         if(localPlayer.Name == thisMatch.PlayerOName){
             characterPlaying = characterO;
         }else{
             characterPlaying = characterX;
         }
         timeToJump = Random.Range(0.25f, 0.75f);
-        characterPlaying = characterO;
         originalY = this.transform.position.y;
         maxY = originalY + 2f;
     }

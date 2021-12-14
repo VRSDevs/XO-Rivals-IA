@@ -13,8 +13,7 @@ public class FollowDroneStateMachine : MonoBehaviour{
     private GameObject characterPlaying;
     
     //Game variables
-    private GameManager gameState;
-    private Match thisMatch;
+    private MatchAI thisMatch;
     private PlayerInfo localPlayer;    
 
     //State
@@ -38,9 +37,8 @@ public class FollowDroneStateMachine : MonoBehaviour{
         nextPoint = points[0];
         speed = BASESPEED;
 
-        gameState = FindObjectOfType<GameManager>();
-        thisMatch = gameState.PlayerMatches[PhotonNetwork.CurrentRoom.Name];
-        localPlayer = GameObject.Find("PlayerObject").GetComponent<PlayerInfo>();
+        thisMatch = FindObjectOfType<MatchAI>();
+        localPlayer = FindObjectOfType<PlayerInfo>();
         if(localPlayer.Name == thisMatch.PlayerOName){
             characterPlaying = characterO;
         }else{

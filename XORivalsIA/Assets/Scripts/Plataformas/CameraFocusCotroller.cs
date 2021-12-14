@@ -13,8 +13,8 @@ public class CameraFocusCotroller : MonoBehaviour
     [SerializeField]
     private GameObject playerO;
 
-    private PlayerMovement playerOController;
-    private PlayerMovement playerXController;
+    private PlayerMovementOff playerOController;
+    private PlayerMovementOff playerXController;
 
     public List<Transform> points;
     public Transform cameraFollow;
@@ -24,8 +24,8 @@ public class CameraFocusCotroller : MonoBehaviour
 
     private void Start()
     {
-        playerOController = playerO.GetComponent<PlayerMovement>();
-        playerXController = playerX.GetComponent<PlayerMovement>();
+        playerOController = playerO.GetComponent<PlayerMovementOff>();
+        playerXController = playerX.GetComponent<PlayerMovementOff>();
     }
 
     void Update()
