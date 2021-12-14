@@ -91,7 +91,7 @@ public class DetectPlayer : MonoBehaviour
     {
 
         linernaDetect = detect;
-        Debug.LogError(linernaDetect + "LINTERNADECTECT");
+
 
     }
     /*
