@@ -3,7 +3,9 @@ using UnityEngine;
 public class FollowDroneBehaviourTree : MonoBehaviour {
 
     //Character GameObject
-    [SerializeField] private GameObject character;
+    [SerializeField] private GameObject characterO;
+    [SerializeField] private GameObject characterX;
+    [SerializeField] private GameObject characterPlaying;
 
     //Parameters
     float timeAttacking = 0f;
@@ -14,6 +16,9 @@ public class FollowDroneBehaviourTree : MonoBehaviour {
 
     float distanceToChar;
     private const float MAXDISTANCE = 5.0f;
+
+    MatchAI thisMatch;
+    PlayerInfo localPlayer;
 
     //Pathfinding route
     [SerializeField] Transform[] points;
@@ -31,6 +36,14 @@ public class FollowDroneBehaviourTree : MonoBehaviour {
         nextPoint = points[0];
         speed = BASESPEED;
         distanceToChar = CheckCharacter();
+
+        thisMatch = FindObjectOfType<MatchAI>();
+        localPlayer = FindObjectOfType<PlayerInfo>();
+        if(localPlayer.Name == thisMatch.PlayerOName){
+            characterPlaying = characterO;
+        }else{
+            characterPlaying = characterX;
+        }
 
         //Tree
         enemyTree = new enemyFirstNode();
@@ -116,9 +129,9 @@ public class FollowDroneBehaviourTree : MonoBehaviour {
 
         //Go to actual point
         if(this.transform.position.x > points[0].position.x && this.transform.position.x < points[1].position.x)
-            this.transform.position = Vector3.MoveTowards(this.transform.position, character.transform.position, Time.deltaTime * speed);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, characterPlaying.transform.position, Time.deltaTime * speed);
         else
-            this.transform.position = Vector3.MoveTowards(this.transform.position, new Vector3(this.transform.position.x, character.transform.position.y, character.transform.position.z), Time.deltaTime * speed);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, new Vector3(this.transform.position.x, characterPlaying.transform.position.y, characterPlaying.transform.position.z), Time.deltaTime * speed);
     }
 
     void GoToCharacterRage(){
@@ -128,13 +141,13 @@ public class FollowDroneBehaviourTree : MonoBehaviour {
 
         //Go to actual point
         if(this.transform.position.x > points[0].position.x && this.transform.position.x < points[1].position.x)
-            this.transform.position = Vector3.MoveTowards(this.transform.position, character.transform.position, Time.deltaTime * speed);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, characterPlaying.transform.position, Time.deltaTime * speed);
         else
-            this.transform.position = Vector3.MoveTowards(this.transform.position, new Vector3(this.transform.position.x, character.transform.position.y, character.transform.position.z), Time.deltaTime * speed);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, new Vector3(this.transform.position.x, characterPlaying.transform.position.y, characterPlaying.transform.position.z), Time.deltaTime * speed);
     }
 
     float CheckCharacter(){
-        return Vector3.Distance(this.transform.position, character.transform.position);
+        return Vector3.Distance(this.transform.position, characterPlaying.transform.position);
     }
 
 }

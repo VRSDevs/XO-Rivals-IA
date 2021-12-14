@@ -7,7 +7,7 @@ using DG.Tweening;
 public class Jugador : MonoBehaviour
 {
 
-    ComidaController controlador;
+    ComidaControllerOff controlador;
 
     private Rigidbody2D player;
     public Collider2D col;
@@ -33,7 +33,7 @@ public class Jugador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        controlador = FindObjectOfType<ComidaController>();
+        controlador = FindObjectOfType<ComidaControllerOff>();
     }
 
     // Update is called once per frame

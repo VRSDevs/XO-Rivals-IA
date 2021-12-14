@@ -36,9 +36,6 @@ public class ComidaControllerOff : MonoBehaviour
     [SerializeField]
     private GameObject playerX;
 
-    // Gamemanager
-    private GameManager _gameManager;
-
     // Controles de movil
     [SerializeField]
     public GameObject leftButton;
@@ -71,7 +68,6 @@ public class ComidaControllerOff : MonoBehaviour
 
     private void Awake()
     {
-        _gameManager = FindObjectOfType<GameManager>();
         thisMatch = FindObjectOfType<MatchAI>();
         //localPlayer = GameObject.Find("PlayerObject").GetComponent<PlayerInfo>();
         localPlayer = FindObjectOfType<PlayerInfo>();
@@ -100,12 +96,9 @@ public class ComidaControllerOff : MonoBehaviour
             playerX.SetActive(true);
         }
 
-        if (!_gameManager.IsWebGLMobile)
-        {
-            leftButton.SetActive(false);
-            rightButton.SetActive(false);
-        }
-
+        leftButton.SetActive(false);
+        rightButton.SetActive(false);
+        
         FindObjectOfType<AudioManager>().StopAllSongs();
         FindObjectOfType<AudioManager>().ChangeMusic(ComiditasMusic,"Tic-Tac-Toe");
     }

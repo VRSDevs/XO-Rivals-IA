@@ -5,7 +5,10 @@ public class ShootDroneBehaviourTree : MonoBehaviour {
     //Character GameObject
     [SerializeField] private GameObject characterO;
     [SerializeField] private GameObject characterX;
-    private GameObject character;
+    private GameObject characterPlaying;
+
+    MatchAI thisMatch;
+    PlayerInfo localPlayer;
 
     //GameObjects
     [SerializeField] private GameObject visionCone;
@@ -26,9 +29,13 @@ public class ShootDroneBehaviourTree : MonoBehaviour {
 
     void Start(){
 
-        //Choose character
-        character = characterO;
-        bulletScript.character = character;
+        thisMatch = FindObjectOfType<MatchAI>();
+        localPlayer = FindObjectOfType<PlayerInfo>();
+        if(localPlayer.Name == thisMatch.PlayerOName){
+            characterPlaying = characterO;
+        }else{
+            characterPlaying = characterX;
+        }
 
         //Start variables
         timeBetweenShoots = Random.Range(0.5f, 1.25f);
@@ -168,7 +175,7 @@ public class ShootDroneBehaviourTree : MonoBehaviour {
     }
 
     void CheckCharacter(){
-        if(Vector3.Distance(this.transform.position, character.transform.position) > 10)
+        if(Vector3.Distance(this.transform.position, characterPlaying.transform.position) > 10)
             CharacterDetected(false);
     }
 

@@ -4,17 +4,33 @@ public class Bullet : MonoBehaviour {
 
     //GameObject that shoots
     [SerializeField] private GameObject parent;
-    public GameObject character;
+    //Character GameObject
+    [SerializeField] private GameObject characterO;
+    [SerializeField] private GameObject characterX;
+    public GameObject characterPlaying;
+    MatchAI thisMatch;
+    PlayerInfo localPlayer;
 
     //Distance to shooter
     private float distanceToParent = 0f;
     private const float MAXDISTTOPARENT = 30f;
     private const float SPEED = 3f;
 
+    private void Start() {
+
+        thisMatch = FindObjectOfType<MatchAI>();
+        localPlayer = FindObjectOfType<PlayerInfo>();
+        if(localPlayer.Name == thisMatch.PlayerOName){
+            characterPlaying = characterO;
+        }else{
+            characterPlaying = characterX;
+        }
+    }
+
     void Update(){
 
         //Move
-        this.transform.position = Vector3.MoveTowards(this.transform.position, character.transform.position, Time.deltaTime * SPEED);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, characterPlaying.transform.position, Time.deltaTime * SPEED);
 
         //Update distance to parent
         distanceToParent = Vector3.Distance(this.transform.position, parent.transform.position);
