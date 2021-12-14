@@ -13618,7 +13618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &582279878
 Transform:
   m_ObjectHideFlags: 0
@@ -33470,7 +33470,6 @@ MonoBehaviour:
   animO: {fileID: 1802874582}
   xSprite: {fileID: 582279877}
   oSprite: {fileID: 1802874580}
-  localPlayer: {fileID: 0}
 --- !u!114 &1515909415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39036,7 +39035,6 @@ MonoBehaviour:
   animO: {fileID: 0}
   xSprite: {fileID: 0}
   oSprite: {fileID: 0}
-  localPlayer: {fileID: 0}
 --- !u!114 &1791572622
 MonoBehaviour:
   m_ObjectHideFlags: 0

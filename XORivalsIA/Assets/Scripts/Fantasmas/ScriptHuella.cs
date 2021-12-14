@@ -22,7 +22,7 @@ public class ScriptHuella : MonoBehaviour
     void Start()
     {
         
-            renderO.SetActive(false);
+            renderX.SetActive(false);
 
         
 
