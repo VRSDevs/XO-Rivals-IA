@@ -40,7 +40,11 @@ public class EnemyBT : BehaviorTree.Tree
 
             root = new Selector(new List<Node>
             {
-
+                 new Sequence(new List<Node>                      //SEGUNDO COMPROBAMOS SI HEMOS SIDO AVISADOS
+                 {
+                     new CheckHuir(luciernaga,this),
+                     new TaskHuir(this,enemyNav,luciernaga),
+                 }),
 
                 new Sequence(new List<Node>                      // PRIMERO COMPROBAMOS SI VEMOS AL ENEMIGO
                 {
@@ -96,7 +100,11 @@ public class EnemyBT : BehaviorTree.Tree
 
             root = new Selector(new List<Node>
             {
-
+                  new Sequence(new List<Node>                      //SEGUNDO COMPROBAMOS SI HEMOS SIDO AVISADOS
+                 {
+                     new CheckHuir(luciernaga,this),
+                     new TaskHuir(this,enemyNav,luciernaga),
+                 }),
 
                 new Sequence(new List<Node>                      // PRIMERO COMPROBAMOS SI VEMOS AL ENEMIGO
                 {
@@ -153,7 +161,11 @@ public class EnemyBT : BehaviorTree.Tree
 
             root = new Selector(new List<Node>
             {
-
+                  new Sequence(new List<Node>                      //SEGUNDO COMPROBAMOS SI HEMOS SIDO AVISADOS
+                 {
+                     new CheckHuir(luciernaga,this),
+                     new TaskHuir(this,enemyNav,luciernaga),
+                 }),
 
                 new Sequence(new List<Node>                      // PRIMERO COMPROBAMOS SI VEMOS AL ENEMIGO
                 {
